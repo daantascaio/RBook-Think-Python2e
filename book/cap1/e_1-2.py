@@ -13,8 +13,3 @@ print(f'Q1 = {seconds}')
 miles = 10 / 1.61
 print(f'Q2 = {miles:.2f}')
 
-metros_in_miles = 999402.6
-v = metros_in_miles / seconds
-print(f'{v:.2f}')
-
-print(390.09 * seconds)
