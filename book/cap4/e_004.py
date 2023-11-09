@@ -1,3 +1,4 @@
+import math
 import turtle
 
 
@@ -42,4 +43,58 @@ turtle.mainloop()
     5-Faça uma versão mais geral do circle chamada arc, que receba um parâmetro adicional de angle, para determinar qual fração do círculo deve ser desenhada. angle está em unidades de graus, então quando angle=360, o arc deve desenhar um círculo completo.
 
 """
-turtle.mainloop()
+
+
+bob = turtle.Turtle()
+
+
+def square(t, length: int):
+    for i in range(4):
+        t.fd(length)
+        t.lt(90)
+
+
+def polygon(t, n, length):
+    angle = 360 / n
+    for i in range(n):
+        t.fd(length)
+        t.lt(angle)
+
+
+def polyline(t, n, length, angle):
+    """Desenha n segmentos de reta com o comprimento dado e
+    ângulo (em graus) entre eles. t é um turtle.
+    """
+    for i in range(n):
+        t.fd(length)
+        t.lt(angle)
+
+
+def circle(t, r):
+    arc(t, r, 360)
+
+
+def arc(t, r, angle):
+    arc_length = 2 * math.pi * r * angle / 360
+    n = int(arc_length / 3) + 1
+    step_length = arc_length / n
+    step_angle = angle / n
+    for i in range(n):
+        t.fd(step_length)
+        t.lt(step_angle)
+
+
+def draw(t, length, n):
+    if n == 0:
+        return
+    angle = 50
+    t.fd(length * n)
+    t.lt(angle)
+    draw(t, length, n-1)
+    t.rt(2 * angle)
+    draw(t, length, n-1)
+    t.lt(angle)
+    t.bk(length * n)
+
+
+draw(bob, 5, 20)
