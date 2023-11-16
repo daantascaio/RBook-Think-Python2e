@@ -113,23 +113,23 @@ cheeses = []
 
 cheeses += 'Olá', 2, 2.5, 'Oi', 'AIUSHD'
 
-for i in cheeses:
-    print(i)
+# for i in cheeses:
+# print(i)
 
 
 cheeses = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 count = 0
-for i in range(len(cheeses)):
-    cheeses[i] = cheeses[i] * 2
-    count += 1
-    print(f'{count}º || {cheeses}')
+# for i in range(len(cheeses)):
+#     cheeses[i] = cheeses[i] * 2
+#     count += 1
+#     print(f'{count}º || {cheeses}')
 
-print(add_all(cheeses))
+# print(add_all(cheeses))
 
 cheeses = 'Olá', 'Oi', 'asda', 'b', 'o', 's'
 
-print(capitalize_all(cheeses))
+# print(capitalize_all(cheeses))
 
 
 # print(only_upper(cheeses))
@@ -236,6 +236,78 @@ def nested_sum(list_):
 
 t = [[1, 2], [3], [4, 5, 6]]
 
-nested_sum(t)
+# nested_sum(t)
 
 # 21
+
+#############################
+
+list_ = [1, 2, 3, 4, 5, 6]
+
+
+def cumsum(list_):
+    new_list = []
+    count = 0
+    for i in list_:
+        count += i
+        new_list.append(count)
+
+    return new_list
+
+
+# print(cumsum(list_=list_))
+# [1, 3, 6, 10, 15, 21]
+
+def chop(list_):
+    list_.pop(0)
+    list_.pop()
+    new_list = list_
+
+    return print(new_list)
+
+
+# chop(list_)
+# [2, 3, 4, 5]
+
+
+def is_sorted(list_):
+    if list_ == sorted(list_):
+        return True
+    else:
+        return False
+
+
+opkl = [1, 2, 4, 6, 3, 1, 9]
+# print(is_sorted(opkl))
+# False
+# print(is_sorted(list_))
+# True
+
+
+def is_anagram(word_1: str, word_2: str) -> bool:
+    if len(word_1) != len(word_2):
+        return False
+    else:
+        _wL1 = []
+        _wL2 = []
+        for i in word_1:
+            _wL1.append(i.lower())
+        for i in word_2:
+            _wL2.append(i.lower())
+
+        _wL1.sort()
+        _wL2.sort()
+
+        if _wL1 == _wL2:
+            return True
+        else:
+            return False
+
+
+# print(is_anagram('roma', 'amor'))
+# print(is_anagram('alegria', 'Galeria'))
+# print(is_anagram('Gume', 'Galeria'))
+# print(is_anagram('alegria', 'Ford'))
+# print(is_anagram('alegria', 'Galeria'))
+# print(is_anagram('alegria', 'Ola'))
+# print(is_anagram('AlErgia', 'regalia'))
