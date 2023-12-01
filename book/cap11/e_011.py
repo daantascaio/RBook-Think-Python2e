@@ -40,6 +40,7 @@ LookupError: value does not appear in the dictionary
 #             inverse[val].append(key)
 #     return inverse
 from pathlib import Path
+from pprint import pprint
 
 PATH_WORDS_FILE = Path(__file__).parent / 'words.txt'
 words = {}
@@ -53,3 +54,5 @@ with open(PATH_WORDS_FILE, 'r') as file:
 
 if 'Caio' in words:
     print('Caio')
+
+pprint(words)
